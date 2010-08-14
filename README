@@ -1,13 +1,7 @@
-You have successfully created a plugin using the JIRA plugin archetype!
+Кастом-поле, упрощающее работу со связанными issues.
 
-Here are the SDK commands you'll use immediately:
+После добавления поля к определенному типу issue (или ко всем issues) необходимо выполнить Configure -> Options и добавить в качестве опции строку, равную имени связи, которая интересует. Например: "блокировка".
 
-* atlas-run   -- installs this plugin into JIRA and starts it on http://localhost:2990/jira
-* atlas-debug -- same as atlas-run, but allows a debugger to attach at port 5005
-* atlas-cli   -- after atlas-run or atlas-debug, opens a Maven command line window:
-                 - 'pi' reinstalls the plugin into the running JIRA instance
-* atlas-help  -- prints description for all commands in the SDK
+У issue, у которых есть исходящая связь такого типа, значение этого поля будет равно "$parent_key.$numeric_key_part". Т.е. если текуший issue имеет key SOMEPROJ-15, а его parent - SOMEPROJ-7, то значение этого поля будет SOMEPROJ-7.15.
 
-Full documentation is always available at:
-
-http://confluence.atlassian.com/display/DEVNET/Developing+your+Plugin+using+the+Atlassian+Plugin+SDK
+У всех прочих issue значение этого поля будет равно issue key.
