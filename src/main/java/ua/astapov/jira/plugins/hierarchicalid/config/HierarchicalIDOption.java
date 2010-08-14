@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2010 Dmitry Astapov <dastapov@gmail.com>
+ * Distributed under BSD License
+ */
 package ua.astapov.jira.plugins.hierarchicalid.config;
 
 import java.util.Iterator;
@@ -5,12 +9,6 @@ import java.util.Iterator;
 import com.atlassian.jira.issue.customfields.option.Option;
 import com.atlassian.jira.issue.customfields.option.Options;
 
-/**
- * DatabaseCFOptions:
- * 
- * @author Kasra Rasaee
- * @company Nullwork Solutions Inc.
- */
 public class HierarchicalIDOption {
 
 	/** The id column name. */
