@@ -1,0 +1,14 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+    </plugin-info>
+
+    <customfield-type key="hierarchicalid" name="Hierarchical ID, composed out of issue ID and its hierarchy of links"
+        class="ua.astapov.jira.plugins.hierarchicalid.HierarchicalIDCFType">
+        <description>Displays the ID of the issue within its link hierarchy</description>
+        <resource type="velocity" name="view" location="templates/plugins/fields/view/view-rawtext.vm"/>
+        <resource type="velocity" name="xml" location="templates/xml/xml-rawtext.vm"/>
+    </customfield-type>
+</atlassian-plugin>
