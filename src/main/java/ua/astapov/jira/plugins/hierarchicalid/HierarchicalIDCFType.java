@@ -58,9 +58,13 @@ public class HierarchicalIDCFType extends CalculatedCFType implements SortableCu
     public Object getValueFromIssue(CustomField field, Issue issue)
     {
     	// Get a list of stored options for the field
-    	Options options = optionsManager.getOptions(field.getRelevantConfig(issue));
+    	List<Option> options = optionsManager.getOptions(field.getRelevantConfig(issue)).getRootOptions();
+        if (options.size() != 1) 
+        {
+          return "Please create a single configuration option for this field. Value should be the name of the link that is used to define a hierarchy";
+        }
 
-    	String linkTypeName = ((Option) options.getRootOptions().get(0)).getValue();
+    	String linkTypeName = ((Option) options.get(0)).getValue();
         log.debug("linkTypeName: " + linkTypeName);
 
         // incidents linked to this one
